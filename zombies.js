@@ -149,7 +149,7 @@ function Item(name) {
   var playerPack = this.getPack();
   if(playerPack.length < 3) {
     playerPack.push(item);
-    console.log("Player: " + name + "Item: " + item);
+    console.log("Player: " + this.name + " Item: " + item.name);
     return true;
   } else {
     console.log("Pack is full, so the item could not be stored");
@@ -183,6 +183,17 @@ function Item(name) {
  * @param {Item/Weapon/Food} item   The item to discard.
  * @return {boolean} true/false     Whether player was able to remove item from pack.
  */
+ Player.prototype.discardItem = function(item) {
+  var playerPack = this.getPack();
+  if(playerPack.indexOf(item) === -1) {
+    console.log("Nothing was discarded, item could not be found");
+    return false;
+  } else {
+    playerPack.splice(playerPack.indexOf(item), 1);
+    console.log("Player: " + this.name + " Item: " + item.name + ". Item was discarded.");
+    return true;
+  }
+ }
 
 
 /**
@@ -204,6 +215,9 @@ function Item(name) {
  * @name equip
  * @param {Weapon} itemToEquip  The weapon item to equip.
  */
+ Player.prototype.equip = function(itemToEquip) {
+
+ }
 
 
 /**
