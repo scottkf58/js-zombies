@@ -115,7 +115,8 @@
   getMaxHealth() {
     return this._maxHealth;
   }
- }
+
+
 
 
 /**
@@ -148,19 +149,19 @@
  * @param {Item/Weapon/Food} item   The item to take.
  * @return {boolean} true/false     Whether player was able to store item in pack.
  */
- class takeItem extends Player {
-  constructor(item) {
-    var playerPack = this.getPack();
-    if(playerPack.length < 3) {
-      playerPack.push(item);
-      console.log("Player: " + this.name + " Item: " + item.name);
-      return true;
-    } else {
-      console.log("Pack is full, so the item could not be stored");
-      return false;
-    }
+ takeItem(item) {
+  var playerPack = this.getPack();
+  if(playerPack.length < 3) {
+    playerPack.push(item);
+    console.log("Player: " + this.name + " Item: " + item.name);
+    return true;
+  } else {
+    console.log("Pack is full, so the item could not be stored");
+    return false;
   }
- }
+}
+
+
 
 
 
@@ -259,6 +260,7 @@
  * @name equippedWith
  * @return {string/boolean}   Weapon name or false if nothing is equipped.
  */
+}
 
 
 /**
