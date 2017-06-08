@@ -106,7 +106,6 @@ function Item(name) {
   Player.prototype.getMaxHealth = function() {
     return this._maxHealth;
   }
-
  }
 
 
@@ -218,10 +217,10 @@ function Item(name) {
   if(itemToEquip instanceof Weapon && playerPack !== -1){
     if(this.equipped !== false){
       var primaryWeapon = this.equipped;
-      this._pack.splice(playerPack, 1, primaryWeapon);
+      this.getPack().splice(playerPack, 1, primaryWeapon);
       this.equipped = itemToEquip;
     } if(this.equipped === false) {
-        this._pack.splice(playerPack, 1);
+        this.getPack().splice(playerPack, 1);
         this.equipped = itemToEquip;
     } else {
         return false;
@@ -282,7 +281,6 @@ function Item(name) {
   if(item instanceof Food) {
     this.eat(item);
   }
-
  }
 
 
