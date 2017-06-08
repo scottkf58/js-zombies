@@ -217,8 +217,8 @@ function Item(name) {
   var playerPack = this.getPack().indexOf(itemToEquip);
   if(itemToEquip instanceof Weapon && playerPack !== -1){
     if(this.equipped !== false){
-      var isEquipped = this.equipped;
-      this._pack.splice(playerPack, 1, isEquipped);
+      var primaryWeapon = this.equipped;
+      this._pack.splice(playerPack, 1, primaryWeapon);
       this.equipped = itemToEquip;
     } if(this.equipped === false) {
         this._pack.splice(playerPack, 1);
@@ -307,7 +307,6 @@ function Item(name) {
     return false;
     }
  }
-
 
 
 /**
